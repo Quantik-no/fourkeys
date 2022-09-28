@@ -18,6 +18,6 @@ providers:
   - name: Four Keys
     type: file
     updateIntervalSeconds: 100
-    allowUiUpdates: true
+    allowUiUpdates: false
     options:
       path: /etc/grafana/dashboards

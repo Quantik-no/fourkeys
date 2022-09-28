@@ -1,3 +1,4 @@
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,18 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: 1
+# config file version
 
+apiVersion: 1
 datasources:
-- name: Google BigQuery
-  type: doitintl-bigquery-datasource
-  access: proxy
-  isDefault: true
-  basicAuth: false
-  withCredentials: false
-  jsonData:
-       authenticationType: gce
-       queryPriority: INTERACTIVE
-       processingLocation: $BQ_REGION
-  version: 3
-  readOnly: false
+  - name: "Google BigQuery"
+    type: "grafana-bigquery-datasource"
+    isDefault: true
+    editable: false
+    enabled: true
+    jsonData:
+      authenticationType: gce

@@ -17,7 +17,7 @@ FROM grafana/grafana
 # Remove / disable these to require authentication
 ENV GF_AUTH_DISABLE_LOGIN_FORM "true"
 ENV GF_AUTH_ANONYMOUS_ENABLED "true"
-ENV GF_AUTH_ANONYMOUS_ORG_ROLE "Admin"
+ENV GF_AUTH_ANONYMOUS_ORG_ROLE "Viewer"
 
 # during setup, this variable will be configured onto the Cloud Run service
 # (default here to "US" as a fallback)
@@ -32,4 +32,4 @@ COPY dashboards.yaml /etc/grafana/provisioning/dashboards
 COPY datasource.yaml /etc/grafana/provisioning/datasources
 
 # Installing the BigQuery Plugin
-RUN grafana-cli plugins install doitintl-bigquery-datasource
+RUN grafana-cli plugins install grafana-bigquery-datasource
